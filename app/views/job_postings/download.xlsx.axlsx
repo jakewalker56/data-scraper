@@ -1,0 +1,2 @@
+wb = xlsx_package.workbook
+wb = JobPosting.xlsx_export(wb)
