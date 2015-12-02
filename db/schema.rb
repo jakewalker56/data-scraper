@@ -11,15 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151201015647) do
+ActiveRecord::Schema.define(version: 20151202195215) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.datetime "last_scraped_time"
+    t.string   "type"
+    t.string   "primary_api_url"
+    t.string   "secondary_api_url"
+    t.string   "authentication_url"
+    t.string   "primary_token"
+    t.string   "secondary_token"
+  end
+
+  create_table "job_exchanges", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "last_scraped_time"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "type"
+    t.string   "primary_api_url"
+    t.string   "secondary_api_url"
+    t.string   "authentication_url"
+    t.string   "primary_token"
+    t.string   "secondary_token"
   end
 
   create_table "job_postings", force: :cascade do |t|
@@ -28,8 +48,18 @@ ActiveRecord::Schema.define(version: 20151201015647) do
     t.integer  "salary_range_high"
     t.integer  "years_experience"
     t.integer  "company_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "job_exchange_id"
+    t.date     "job_posted_date"
+    t.date     "last_active_date"
+    t.string   "external_unique_identifier"
+    t.string   "title"
+    t.string   "company_name"
+    t.string   "address"
+    t.string   "latitude"
+    t.string   "longitude"
+    t.string   "source"
   end
 
   create_table "users", force: :cascade do |t|
