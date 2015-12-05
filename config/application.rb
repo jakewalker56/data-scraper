@@ -25,5 +25,6 @@ module DataScraper
 
     config.autoload_paths += %W(#{config.root}/app/models/job_exchanges)
     config.autoload_paths += %W(#{config.root}/app/models/companies)
+    config.autoload_paths += %W(#{config.root}/lib)
   end
 end
