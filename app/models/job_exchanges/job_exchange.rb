@@ -12,21 +12,23 @@ class JobExchange < ActiveRecord::Base
 			"marketing",
 			"product",
 			"manager",
-			"associate"
+			"associate",
+			"customer service"
 		]
 	end
 
 	def self.locations
 		[
-			"Chicago, IL",
-			"San Francisco, CA",
-			"Boston, MA",
-			"New York, NY",
-			"Seattle, WA",
-			"Austin, TX",
-			"Washington DC",
-			"Los Angeles, CA",
-			"San Jose, CA"
+			""
+			# "Chicago, IL",
+			# "San Francisco, CA",
+			# "Boston, MA",
+			# "New York, NY",
+			# "Seattle, WA",
+			# "Austin, TX",
+			# "Washington DC",
+			# "Los Angeles, CA",
+			# "San Jose, CA"
 		]
 	end
 

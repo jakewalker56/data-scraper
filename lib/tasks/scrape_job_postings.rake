@@ -1,3 +1,6 @@
+require 'nokogiri'
+require 'open-uri'
+
 desc "scrape job postings"
 task :scrape_job_postings => :environment do
     begin

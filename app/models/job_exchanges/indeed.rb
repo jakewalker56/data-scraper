@@ -24,9 +24,9 @@ class Indeed < JobExchange
 			"publisher" => self.primary_token,
 			"q" => search_term,
 			"l" => location,
-			"radius" => "25", #distance from search location
-			"limit" => "1000", #return the first n listings
-			"fromage" => "1", #search back 1 day
+			"radius" => "25000", #distance from search location
+			"limit" => "10000", #return the first n listings
+			"fromage" => "365", #search back 1 day
 			"latlong" => "1", #return lat and long of job posting
 			"v" => "2"
 			#sort = ""
@@ -48,6 +48,7 @@ class Indeed < JobExchange
 	  	  xml_data = Net::HTTP.get_response(URI.parse(url)).body
 		  job = {}
 
+		  puts xml_data.inspect
 		  data = XmlSimple.xml_in(xml_data)
 		  #puts data.inspect
 		  data['results'].each do |xml_jobs_wrapper|
