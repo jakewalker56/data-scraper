@@ -36,7 +36,17 @@ class JobPosting < ActiveRecord::Base
 		#job_posting.attributes = job_hash.slice(*JobPosting.attribute_names())
       
 	end
-	def update_from_job(job)
+	def update_from_job(job_hash)
 		#update self to reflect changes in job, especially any date changes
+		#update salary, because of the way Indeed hanldes salary searching
+		if self.salary_range_low < job_hash["salary_range_low"].to_i || self.salary_range_high < job_hash["salary_range_high"].to_i
+			if self.salary_range_low < job_hash["salary_range_low"].to_i
+				self.salary_range_low = job_hash["salary_range_low"].to_i
+			end
+			if self.salary_range_high < job_hash["salary_range_high"].to_i
+				self.salary_range_high = job_hash["salary_range_high"].to_i
+			end
+			self.save
+		end
 	end  
 end

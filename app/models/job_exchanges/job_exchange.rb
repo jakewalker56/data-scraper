@@ -19,16 +19,15 @@ class JobExchange < ActiveRecord::Base
 
 	def self.locations
 		[
-			""
-			# "Chicago, IL",
-			# "San Francisco, CA",
-			# "Boston, MA",
-			# "New York, NY",
-			# "Seattle, WA",
-			# "Austin, TX",
-			# "Washington DC",
-			# "Los Angeles, CA",
-			# "San Jose, CA"
+			"Chicago, IL",
+			"San Francisco, CA",
+			"Boston, MA",
+			"New York, NY",
+			"Seattle, WA",
+			"Austin, TX",
+			"Washington DC",
+			"Los Angeles, CA",
+			"San Jose, CA"
 		]
 	end
 
