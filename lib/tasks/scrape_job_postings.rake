@@ -1,5 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
+require 'net/http'
 
 desc "scrape job postings"
 task :scrape_job_postings => :environment do
