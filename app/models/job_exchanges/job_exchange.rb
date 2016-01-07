@@ -13,7 +13,8 @@ class JobExchange < ActiveRecord::Base
 			"product",
 			"manager",
 			"associate",
-			"customer service"
+			"customer service",
+			"RN MSN"
 		]
 	end
 
